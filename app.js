@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const cors = require('cors');
 
 const app = express();
 
@@ -39,6 +40,13 @@ app.use(
   })
 );
 
+// CORS (cross-domain requests)
+app.use(cors());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+});
+
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -58,6 +66,19 @@ app.use(function (req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
-const PORT = process.env.PORT || 8080;
+//const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, console.log(`Server running on  ${PORT}`));
+//app.listen(PORT, console.log(`Server running on  ${PORT}`));
+
+// Create HTTP or HTTPS server
+let server = null;
+try {
+    //const passphrase = 'keyPass';  // The password of the private key
+    //const config = { key: fs.readFileSync(key_file), cert: fs.readFileSync(cert_file), passphrase: passphrase };
+    //server = https.createServer(config, app );
+    //const instance = server.listen(443, () => { console.log('Virtual Tourism API is running on port ' +  instance.address().port); });
+}
+catch(err) {
+    server = http.createServer(app);
+    const instance = app.listen(8084, "0.0.0.0", () => { console.log('WARNING: HTTPS not running, Virtual Tourism API is running on port ' +  instance.address().port + ' (' + err + ')'); });
+}

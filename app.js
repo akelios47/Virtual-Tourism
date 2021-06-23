@@ -42,7 +42,11 @@ app.use(
 );
 
 // CORS (cross-domain requests)
-app.use(cors());
+var corsOptions = {
+  origin: 'http://localhost:8080',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+app.use(cors(corsOptions));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();
@@ -72,7 +76,7 @@ app.use('/users', require('./routes/users.js'));
 //app.listen(PORT, console.log(`Server running on  ${PORT}`));
 
 server = http.createServer(app);
-const instance = app.listen(8084, "0.0.0.0", () => { console.log('WARNING: HTTPS not running, Virtual Tourism API is running on port ' + instance.address().port); });
+const instance = app.listen(8080, "0.0.0.0", () => { console.log('WARNING: HTTPS not running, Virtual Tourism API is running on port ' + instance.address().port); });
 
 // Create HTTP or HTTPS server
 /*let server = null;

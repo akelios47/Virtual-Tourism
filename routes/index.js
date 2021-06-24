@@ -3,7 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
 // Index Page
-router.get('/', forwardAuthenticated, (req, res) => res.render('./views/index.ejs'));
+router.get('/', forwardAuthenticated, (req, res) => res.render('./index.ejs'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>

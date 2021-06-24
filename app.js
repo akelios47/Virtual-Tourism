@@ -42,11 +42,12 @@ app.use(
 );
 
 // CORS (cross-domain requests)
-var corsOptions = {
+/*var corsOptions = {
   origin: 'http://localhost:8080',
   optionsSuccessStatus: 200 // For legacy browser support
-}
-app.use(cors(corsOptions));
+}*/
+//app.use(cors(corsOptions));
+app.use(cors());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   next();

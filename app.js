@@ -26,7 +26,8 @@ mongoose
 
 // EJS
 app.use(expressLayouts);
-app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static("public"));
 
 // Express body parser

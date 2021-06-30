@@ -6,8 +6,8 @@ const passport = require('passport');
 const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
 
-// Welcome Page
-router.get('/welcome', forwardAuthenticated, (req, res) => res.render('welcome'));
+// Developer Gate Page
+router.get('/devgate', forwardAuthenticated, (req, res) => res.render('devgate'));
 
 // Login Page
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));

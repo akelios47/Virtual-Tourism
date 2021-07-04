@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MappSchema = mongoose.Schema({
+const CitySchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -16,6 +16,6 @@ const MappSchema = mongoose.Schema({
     }
 });
 
-const Mapp = mongoose.model('Mapp', MappSchema);
+const City = mongoose.model('City', CitySchema);
 
-module.exports = Mapp;
+module.exports = City;

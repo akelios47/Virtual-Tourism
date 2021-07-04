@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
-// Load Mapp model
-const Mapp = require('../models/Mapp');
+// Load City model
+const City = require('../models/City');
 
-// Mapp Fetch Page
-router.get('/fetchMapp', (req, res) => res.render('fetchMapp'));
+// Tyre Page
+router.get('/tyre', (req, res) => res.render('tyreCity'));
 
-// Remove Mapp Page
-router.delete('/removeMapp', (req, res) => res.render('removeMapp'));
+// Other Page
+router.get('/other', (req, res) => res.render('otherCity'));
+
+// Remove City Page
+router.delete('/removeCity', (req, res) => res.render('removeCity'));
 
 // Register
-router.post('/registerMapp', (req, res) => {
+router.post('/registerCity', (req, res) => {
   const { name, size, link_to_media } = req.body;
   let errors = [];
 
@@ -18,17 +21,17 @@ router.post('/registerMapp', (req, res) => {
     errors.push({ msg: 'Please enter all fields' });
   }
   else {
-    Mapp.findOne({ name: name }).then(mapp => {
-      if (mapp) {
+    City.findOne({ name: name }).then(city => {
+      if (city) {
         errors.push({ msg: 'Name already exists' });
-        res.render('registerMapp', {
+        res.render('registerCity', {
           errors,
           name,
           size,
           link_to_media
         });
       } else {
-        const newMapp = new Mapp({
+        const newCity = new City({
           name,
           size,
           link_to_media

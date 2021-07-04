@@ -71,7 +71,11 @@ app.use(function (req, res, next) {
 
 // Routes
 app.use('/', require('./routes/index.js'));
+app.use('/index', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+app.use('/cities', require('./routes/cities.js'));
+app.use('/sites', require('./routes/sites.js'));
+app.use('/locations', require('./routes/locations.js'));
 
 //const PORT = process.env.PORT || 8080;
 

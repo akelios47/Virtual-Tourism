@@ -1,35 +1,14 @@
-<style>
-  .area {
-    background: #fff;
-    display: block;
-    height: 375px;
-    opacity: 0;
-    position: absolute;
-    width: 125px;
-  }
-
-  #area2 {
-    right: 130px;
-  }
-
-  #area1:hover,
-  #area2:hover {
-    opacity: 0.2;
-  }
-</style>
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body text-center">
       <h1 class="text-center mb-3"><i class="fas fa-map-signs fa-1x"></i> Virtual Tourism</h1>
       <p>Click on the Image to Proceed</p>
       <div class="center mb-3">
-        <a id="area1" class="area" href="#"></a>
-        <a id="area2" class="area" href="#"></a>
         <!--http://www.outsharked.com/imagemapster/examples/usa.html-->
         <img style="width:250px;" src="/assets/Lebanon.png" class="center" usemap="#lebanonmap">
         <map name="lebanonmap">
-          <area shape="circle" coords="10,330,25" alt="Uptown" href="/cities/tyre">
-          <area shape="circle" coords="130,130,50" alt="Uptown" href="/cities/other">
+          <area shape="circle" coords="10,330,25" alt="Uptown" href="/cities/tyre" id="area1" class="area1">
+          <area shape="circle" coords="130,130,50" alt="Uptown" href="/cities/other" id="area2" class="area2">
         </map>
         <!--<img style="width:250px;" src="https://drive.google.com/file/d/1HV0DekXQZjUN2V7t0XNaDE4oJJCROs5e/view?usp=sharing">-->
       </div>
@@ -37,3 +16,40 @@
     </div>
   </div>
 </div>
+<style>
+  .area1 {
+    background: #f1b7f1;
+    display: block;
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .area2 {
+    background: #d11e45;
+    display: block;
+    height: 100px;
+    width: 100px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  #area1 {
+    left: 130px;
+    top: 420px;
+  }
+
+  #area2 {
+    left: 230px;
+    top: 200px;
+  }
+
+  #area1:hover {
+    opacity: 0.5;
+  }
+
+  #area2:hover {
+    opacity: 0.2;
+  }
+</style>

@@ -3,6 +3,18 @@ const router = express.Router();
 // Load Site model
 const Site = require('../models/Site');
 
+// Uptown Site
+router.get('/uptown', (req, res) => res.render('uptown'));
+
+// Downtown Site
+router.get('/downtown', (req, res) => res.render('downtown'));
+
+// Sea Site
+router.get('/sea', (req, res) => res.render('sea'));
+
+// Site Upload Page
+router.get('/upload', (req, res) => res.render('upload'));
+
 // Site Fetch Page
 router.get('/fetchSite', (req, res) => res.render('fetchSite'));
 

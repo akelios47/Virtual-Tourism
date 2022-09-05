@@ -5,14 +5,14 @@ const LocationSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    coords_in_site: {
+    descriptor1: {
         type: String,
         required: true
     },
-    link_to_media: {
+    descriptor2: {
         type: String,
         required: true
-    }
+    }  
 });
 
 const Location = mongoose.model('Location', LocationSchema);

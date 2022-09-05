@@ -6,6 +6,25 @@
             <form enctype="multipart/form-data" action="/sites/registerSite" method="post">
                 <input id="json-file" type="file" />
             </form>
+            &nbsp;&nbsp;&nbsp;
+            <h3 class="mt-4">Manual Entry</h3>
+            <form action="/locations/add" method="POST">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="name" id="name" name="name" class="form-control" placeholder="Enter Location Name" />
+                </div>
+                <div class="form-group">
+                  <label for="descriptor1">Descriptor1</label>
+                  <input type="descriptor1" id="descriptor1" name="descriptor1" class="form-control" placeholder="Enter a descriptor" />
+                </div>
+                <div class="form-group">
+                  <label for="descriptor2">Descriptor2</label>
+                  <input type="descriptor2" id="descriptor2" name="descriptor2" class="form-control" placeholder="Enter a descriptor" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Upload</button>
+            </form>
+            &nbsp;&nbsp;&nbsp;
+            <a href="/" class="btn btn-primary btn-block mb-3">Home</a>
         </div>
     </div>
 </div>

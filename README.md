@@ -1,6 +1,6 @@
 # Node.js
 
-This is a Virtual Tourism app using Node.js, Express, Passport, Mongoose, EJS and some other packages.
+This is a Virtual Tourism platform using Node.js, Express, Passport, Mongoose, EJS and some other packages.
 
 ### Version: 1.0.0
 
